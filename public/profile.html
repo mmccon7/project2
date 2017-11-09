@@ -208,7 +208,7 @@ $("#post").click(function(event) {
     // row.append("<p>" + newChirp.body + "</p>");
     // row.append("<p>At " + moment(newChirp.created_at).format("h:mma on dddd") + "</p>");
 
-    $("#post-area").append(row);
+    $("#post-area").prepend(row);
 
 
     // Empty each input box by replacing the value with an empty string

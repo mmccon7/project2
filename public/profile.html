@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My medGram Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Moment.js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <script src="assets/style.js"></script>
+    <style>
+    /* Set black background color, white text and some padding */
+
+    footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="color: white" href="#">MedGram</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#" style="color: white;"> Messages</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Search..">
+                        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/" style='color: white;'><span class="glyphicon glyphicon-user" style="color: white;"></span> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-3 well">
+                <div class="well">
+                    <p><a href="#">Kenny's Profile</a></p>
+                    <img src="https://thumbs.dreamstime.com/b/cute-color-vector-illustration-beard-afro-black-guy-face-avatar-positive-young-black-guy-smiling-87383651.jpg " class="img-circle" height="65" width="65" alt="Avatar">
+                </div>
+                <div class="well">
+                    <p><a href="#">Interests</a></p>
+                    <p>
+                        <span class="label label-default">News</span>
+                        <span class="label label-primary">Symptoms</span>
+                        <span class="label label-success">Drugs</span>
+                        <span class="label label-info">Supplements</span>
+                        <span class="label label-warning">Healthy Living</span>
+                        <span class="label label-danger">Communtiy</span>
+                    </p>
+                </div>
+                <div class="alert alert-success fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                    <p><strong>Doctors</strong></p>
+                    Find doctors in your area.
+                </div>
+                <p><a href="https://doctor.webmd.com/"><strong>Web MD</strong></a></p>
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default text-left">
+                            <div class="panel-body">
+                                <div class="col-lg-12">
+                                    <div class="input-group">
+                                        <input type="text" id="body-box" class="form-control" placeholder="How are you feeling today...?">
+                                        <span class="input-group-btn" id="post">
+                                        <button id="post" class="btn btn-secondary">Share</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h2>Community Feed</h2>
+                        <hr>
+                    </div>
+                </div>
+                <div id="post-area">
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <p>John Smith</p>
+                            <img src="https://pickaface.net/gallery/avatar/Ognjen52341d1057cf1.png" class="img-circle" height="55" width="55" alt="Avatar">
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="well">
+                            <p>Anyone interested in volunteering at the hospital cancer center? The hospital is looking for volunteers to help with newly admitted patients. Message me if you want details!</p>
+                            <p>at 6:15 PM yesterday</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <p>Eric Johnson</p>
+                            <img src="https://pickaface.net/gallery/avatar/.2108558ad44e8ac1d.png" class="img-circle" height="55" width="55" alt="Avatar">
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="well">
+                            <p>Today I had 4 chocolate chip cookies... not so good for a guy who has diabetes but it was so worth it! </p>
+                            <p>at 4:45 PM yesterday</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <p>Adam Brown</p>
+                            <img src="https://pickaface.net/gallery/avatar/yousef76052bc84348cf65.png" class="img-circle" height="55" width="55" alt="Avatar">
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="well">
+                            <p>It's been a hard week, haven't had much energy to do anything but I love being able to spend time with family and friends.</p>
+                            <p>at 3:25 PM yesterday</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <p>Jamie Reid</p>
+                            <img src="https://www.wpclipart.com/people/female/women_6/woman_avatar.png" class="img-circle" height="55" width="55" alt="Avatar">
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="well">
+                            <p>Anyone have any ideas for good gluten free recipes on homemade bread? Celiac Disease is limiting my food options!</p>
+                            <p>at 2:33 PM yesterday</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 well">
+                <div class="thumbnail">
+                    <p>Upcoming Meetups:</p>
+                    <img src="http://livefromalounge.boardingarea.com/wp-content/uploads/2017/09/Meetup_square.png" alt="Meetups" width="400" height="300">
+                    <p><strong>Chandler, AZ</strong></p>
+                    <p>Fri. 3 November 2017</p>
+                    <button class="btn btn-primary">Info</button>
+                </div>
+                <div class="well">
+                    <p>Info</p>
+                </div>
+                <div class="well">
+                    <p>Info</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid text-center">
+        <div class="container-fluid">
+            <p class='ref-link'><a href="/api/friends" target='_blank'>API Friends List</a> | <a href="" target='_blank'>GitHub</a></p>
+            <p>Footer Text</p>
+        </div>
+    </footer>
+</body>
+<script>
+// When user clicks add-btn
+$("#post").click(function(event) {
+    event.preventDefault();
+
+    // Make a newChirp object
+    var newChirp = {
+        body: $("#body-box").val().trim(),
+        created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+    };
+
+    console.log(newChirp);
+
+
+    var row = $('<div class="row">' + '<div class="col-sm-3">' + '<div class="well">' + '<p>Kenny</p>' + '<img src="https://thumbs.dreamstime.com/b/cute-color-vector-illustration-beard-afro-black-guy-face-avatar-positive-young-black-guy-smiling-87383651.jpg " class="img-circle" height="65" width="65" alt="Avatar">' + '</div>' + '</div>' + '<div class="col-sm-9">' + '<div class="well">' + "<p>" + newChirp.body + "</p>" + "<p>at " + moment().format('LT') + "</p>" + '</div>' + '</div>' + '</div>');
+
+
+    row.addClass("chirp");
+
+    // row.append("<p>" + newChirp.body + "</p>");
+    // row.append("<p>At " + moment(newChirp.created_at).format("h:mma on dddd") + "</p>");
+
+    $("#post-area").append(row);
+
+
+    // Empty each input box by replacing the value with an empty string
+    $("#body-box").val("");
+});
+</script>
+
+</html>
+Add Comment Collapse

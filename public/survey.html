@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>medGram Survey</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    /* Set black background color, white text and some padding */
+
+    footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
+    }
+    </style>
+</head>
+
+<body>
+    <style>
+    h2 {
+        text-align: center;
+    }
+    </style>
+
+    <body>
+        <div class="container">
+            <h1 class="text-center">MedGram Survey</h1>
+            <hr>
+            <h3 class="text-center">Please tell us a little bit about yourself</h3>
+            <br>
+            <br>
+            <form action="/profile" id="survey-form" method="post" role="form">
+                <div class="form-group">
+                    <label for="name" class="lead">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="q1" class="lead">Age</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="q2" class="lead">Sex</label>
+                    <select id="q2" class="form-control" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="1">M</option>
+                        <option value="2">F</option>
+                    </select>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="q3" class="lead">Whats your medical diagnosis?</label>
+                    <select id="q3" class="form-control" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="1">Celiac</option>
+                        <option value="2">Anemia</option>
+                        <option value="3">Diabetes</option>
+                        <option value="4">PTSD</option>
+                        <option value="5">Cancer</option>
+                    </select>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="q4" class="lead">What brings you to medGram?</label>
+                    <select id="q4" class="form-control" required>
+                        <option value="" selected disabled>Please select</option>
+                        <option value="1">Information</option>
+                        <option value="2">Find a doctor</option>
+                        <option value="3">Socializing</option>
+                        <option value="4">To meet people like me</option>
+                        <option value="5">Just browsing</option>
+                    </select>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-4 col-sm-offset-4">
+                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Register">
+                </div>
+            </form>
+            <br />
+        </div>
+        <br>
+        <br>
+        <footer class="container-fluid text-center">
+            <div class="container-fluid">
+                <p class='ref-link'><a href="/api/friends" target='_blank'>API Friends List</a> | <a href="" target='_blank'>GitHub</a></p>
+                <p>Footer Text</p>
+            </div>
+        </footer>
+    </body>
+
+</html>
+<!-- <script type="text/javascript">
+    // declare global variables
+    var nameVal, imageVal, q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val, newPerson;
+    $('#submit').on('click', function(event) {
+        event.preventDefault();
+        // set global variable values for multiple uses in this and other functions
+        nameVal = $('#name').val();
+        imageVal = $('#image').val();
+        q1Val = parseInt($('#q1').val());
+        q2Val = parseInt($('#q2').val());
+        q3Val = parseInt($('#q3').val());
+        q4Val = parseInt($('#q4').val());
+        q5Val = parseInt($('#q5').val());
+        q6Val = parseInt($('#q6').val());
+        q7Val = parseInt($('#q7').val());
+        q8Val = parseInt($('#q8').val());
+        q9Val = parseInt($('#q9').val());
+        q10Val = parseInt($('#q10').val());
+        newPerson = {
+            name: nameVal,
+            image: imageVal,
+            responses: [q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val],
+            total: q1Val + q2Val + q3Val + q4Val + q5Val + q6Val + q7Val + q8Val + q9Val + q10Val
+        };
+        // declare and set local variables
+        var modalTitle = $('.modal-title');
+        var modalBody = $('.modal-body');
+        var modal = $('#modal');
+        var apiFriendsRoute = '/api/friends';
+        if (formIsValid()) {
+            $.get(apiFriendsRoute, function(data) {
+                var match = makeMatch(data);
+                if (match.name !== undefined) {
+                    modalTitle.text('You have a match!');
+                    modalBody.html('<p class="strong">You\'ve found a new friend:</p><p>' + match.name + '</p><img src="' + match.image + '" height="45">');
+                } else {
+                    modalTitle.text('Too few friends');
+                    modalBody.text('Sorry, there are too few friends to match you with.');
+                }
+            }).then(function() {
+                modal.show();
+                $('.form')[0].reset();
+                $.post(apiFriendsRoute, newPerson);
+            });
+        } else {
+            modalTitle.text('Error');
+            modalBody.text('Please make sure all questions have been filled in.');
+            modal.show();
+        }
+    });
+    function formIsValid() {
+        return (nameVal !== '' && imageVal !== '' && !isNaN(q1Val) && !isNaN(q2Val) && !isNaN(q3Val) && !isNaN(q4Val) &&
+            !isNaN(q5Val) && !isNaN(q6Val) && !isNaN(q7Val) && !isNaN(q8Val) && !isNaN(q9Val) && !isNaN(q10Val));
+    }
+    function makeMatch(data) {
+        var difference = 50;
+        var minName;
+        var minImage;
+        data.forEach(function(person) {
+            var localDiff = Math.abs(newPerson.total - person.total);
+            if (localDiff < difference) {
+                difference = localDiff;
+                minName = person.name;
+                minImage = person.image;
+            }
+        });
+        return {
+            name: minName,
+            image: minImage
+        };
+    }
+    </script> -->
+</body>
+
+</html>
